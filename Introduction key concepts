@@ -1,0 +1,11 @@
+1. Objects and Classes
+Object: An instance of a class that represents a specific entity with its own state and behavior.
+Class: A blueprint or template that defines the properties (attributes) and behaviors (methods) of objects.
+2. Encapsulation
+Encapsulation is the practice of bundling data (attributes) and methods (functions) that operate on the data into a single unit or class. This hides the internal state of the object from the outside world and only exposes what is necessary.
+3. Inheritance
+Inheritance allows one class to inherit the properties and behaviors of another class. This promotes code reuse and establishes a natural hierarchy between classes. For example, a Dog class might inherit from an Animal class.
+4. Polymorphism
+Polymorphism enables objects to be treated as instances of their parent class rather than their actual class. This means that the same method or property can behave differently depending on the object’s class. Method overriding (runtime polymorphism) and method overloading (compile-time polymorphism) are key aspects.
+5. Abstraction
+Abstraction involves hiding complex implementation details and showing only the essential features of an object. Abstract classes and interfaces are used to define abstract concepts and provide a common interface for different implementations.
