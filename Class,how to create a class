@@ -1,0 +1,65 @@
+
+Class: A class is user-defined and serves as a blueprint for creating objects. For example, think of it like designing a house where the layout and shape of each floor are defined by a class,
+which acts as a blueprint for the final structure (object).
+A class consists of its own attributes, methods, and objects
+
+Attributes: Define the properties or characteristics of the class (what the class looks like).
+Methods: Define the behavior or actions of the class (what the class does).
+Objects: Instances of the class created using its blueprint (what the class is).
+Step 1: Create a Basic Class
+First, we create a simple class named Learning.
+class Main {
+    public static void main(String[] args) {
+        // Main method for execution
+    }
+}
+class Learning {
+    // Empty class definition
+}
+
+Step 2: Add Attributes to the Class
+
+Next, we add some attributes to the Learning class to represent properties.
+
+
+class Learning {
+    String Book_name; // Attribute to store the name of the book
+    int No_book;      // Attribute to store the number of books
+}
+Step 3: Add a Method to the Class
+
+Now, we include a method in the Learning class. This method will initialize the attributes.
+class Learning {
+    String Book_name;
+    int No_book;
+   // Method to set the attributes
+    void Humayun_Ahmed(String Book_name, int No_book) {
+        this.Book_name = Book_name;
+        this.No_book = No_book;
+    }
+}
+Step 3.1: Create a Method Without Arguments
+
+We can also create a method without arguments. Note that methods without a return type and without arguments behave like functions.
+
+class Learning {
+    String Book_name;
+    int No_book;
+
+    // Method without arguments
+    void Humayun_Ahmed() {
+        // This method doesn't perform any actions or return a value
+    }
+}
+Step 4: Create an Object
+
+Finally, to use the Learning class, we create an object of it.
+
+class Main {
+    public static void main(String[] args) {
+        // Creating an object of the Learning class
+        Learning learn = new Learning();
+        learn.Humayun_Ahmed("Book Title", 5); // Initialize the attributes using the method
+    }
+}
+
