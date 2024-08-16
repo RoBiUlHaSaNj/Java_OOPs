@@ -1,0 +1,127 @@
+
+
+
+In Object-Oriented Programming (OOP), methods are functions defined within a class that describe the behaviors or actions that objects of the class can perform. Methods are essential in OOP 
+as they allow interaction with an object's attributes and enable the object to perform specific tasks. Reminder method always need return type (int ,void,float,double).
+
+
+Types of Methods in OOP
+
+Instance Methods:
+
+Definition: These are the most common type of methods and are associated with an instance of a class (i.e., an object).
+Usage: Instance methods can access and modify the instance variables (attributes) of the object they are called on.
+Example:
+class Student {
+    String name;
+    int age;
+
+    // Instance method
+    void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+In this example, displayInfo() is an instance method that prints the name and age of the Student object.
+
+
+Static (Class) Methods:
+
+Definition: Static methods belong to the class rather than any specific instance of the class. They are defined using the static keyword.
+Usage: Static methods can be called without creating an object of the class. They can access static variables directly but cannot access instance variables.
+Example:
+class MathOperations {
+    // Static method
+    static int add(int a, int b) {
+        return a + b;
+    }
+}
+The add() method can be called like this: MathOperations.add(5, 10); without needing to instantiate MathOperations.
+
+Constructor Methods:
+
+Definition: Constructors are special (I don’t agree to call special) methods that are called when an object is instantiated. They initialize the object’s attributes and do not have a return type.
+Types:
+Default Constructor: A constructor with no parameters.
+
+Parameterized Constructor: A constructor that takes arguments to initialize the object with specific values.
+Example:
+class Book {
+    String title;
+    int pages;
+
+    // Parameterized Constructor
+    Book(String title, int pages) {
+        this.title = title;
+        this.pages = pages;
+    }
+}
+Here, the Book class has a parameterized constructor that sets the title and pages when an object is created.
+
+
+Accessor (Getter) Methods:
+
+Definition: These methods are used to retrieve the values of private instance variables.
+Usage: Accessor methods provide a way to read the attributes of an object without directly accessing the variables.
+Example:
+class Person {
+    private String name;
+
+    // Getter method
+    public String getName() {
+        return name;
+    }
+}
+The getName() method allows access to the private name attribute.
+
+
+Mutator (Setter) Methods:
+
+Definition: These methods are used to modify the values of private instance variables.
+Usage: Mutator methods provide controlled access to changing the attributes of an object.
+Example:
+class Person {
+    private String name;
+
+    // Setter method
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+The setName() method allows you to set the value of the private name attribute.
+
+
+Abstract Methods:
+
+Definition: These are methods declared without an implementation (no method body). They are used in abstract classes and must be implemented by subclasses.
+Usage: Abstract methods are meant to be overridden in derived classes, enforcing a contract for subclasses to provide specific behavior.
+Example:
+abstract class Animal {
+    // Abstract method
+    abstract void sound();
+}
+
+class Dog extends Animal {
+    // Implementing abstract method
+    void sound() {
+        System.out.println("Bark");
+    }
+}
+The sound() method in Animal is abstract and is implemented by the Dog class.
+
+
+Final Methods:
+
+Definition: Methods declared with the final keyword cannot be overridden by subclasses.
+Usage: Final methods ensure that the behavior defined in the method is preserved and cannot be changed in any subclass.
+Example:
+class Car {
+    // Final method
+    final void startEngine() {
+        System.out.println("Engine started");
+    }
+}
+The startEngine() method cannot be overridden in any subclass of Car.
+Summary
+In OOP, methods are integral to defining the capabilities of objects. Understanding the different types of methods allows developers to design classes that are flexible,
+reusable, and maintainable. Each type of method serves a specific purpose, whether it’s controlling access to data, providing shared functionality, or ensuring that certain behaviors are enforced across all instances of a class.
