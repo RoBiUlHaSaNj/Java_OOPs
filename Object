@@ -1,0 +1,153 @@
+What is an Object in Java?
+An object is an instance of a class. When a class is defined, no memory is allocated until an object of that class is created.
+An object is a real-world entity, such as a car, a person, or a book. Objects have two main characteristics:
+
+State (attributes or fields): These are represented by variables in a class. For example, a Car object might have a color, model, and year.
+
+Behavior (methods or functions): These are represented by methods in a class. For example, a Car object might have methods like drive(), brake(), or honk().
+
+Identity : It gives a unique name to an object and enables one object to interact with other objects.
+
+
+Define a class: First, you define a class with attributes and methods.
+public class Car {
+    String color;
+    String model;
+    
+    void drive() {
+        System.out.println("The car is driving");
+    }
+}
+
+
+Create an object: Once the class is defined, you can create an object from it.
+
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car(); // Creating an object of the Car class
+        
+        // Set object attributes
+        myCar.color = "Red";
+        myCar.model = "Tesla Model S";
+        
+        // Access object method
+        myCar.drive(); // Outputs: The car is driving
+    }
+}
+
+
+Example with Multiple Objects
+public class Main {
+    public static void main(String[] args) {
+        // Create two objects of the Car class
+        Car car1 = new Car();
+        Car car2 = new Car();
+        
+        // Set attributes for car1
+        car1.color = "Blue";
+        car1.model = "BMW X5";
+        
+        // Set attributes for car2
+        car2.color = "Black";
+        car2.model = "Audi A4";
+        
+        // Access methods and attributes
+        car1.drive();  // Outputs: The car is driving
+        car2.drive();  // Outputs: The car is driving
+    }
+}
+
+
+How to Create an Array of Objects
+
+Define a Class: First, you need to have a class from which the objects will be created.
+
+
+public class Car {
+    String color;
+    String model;
+    
+    void drive() {
+        System.out.println(model + " is driving");
+    }
+}
+Create an Array of Objects: You can create an array that holds multiple objects of this class.
+
+
+public class Main {
+    public static void main(String[] args) {
+        // Create an array of Car objects
+        Car[] cars = new Car[3]; // Array of 3 Car objects
+        
+        // Create individual Car objects and assign them to the array
+        cars[0] = new Car();
+        cars[1] = new Car();
+        cars[2] = new Car();
+        
+        // Set attributes for each Car object
+        cars[0].color = "Red";
+        cars[0].model = "Tesla Model S";
+        
+        cars[1].color = "Blue";
+        cars[1].model = "BMW X5";
+        
+        cars[2].color = "Black";
+        cars[2].model = "Audi A4";
+        
+        // Access methods for each object in the array
+        for (int i = 0; i < cars.length; i++) {
+            cars[i].drive();  // Outputs: Tesla Model S is driving, BMW X5 is driving, Audi A4 is driving
+        }
+    }
+}
+import java.util.Scanner;
+
+class Student {
+    String name;
+    String id;
+    float cgpa;
+    
+    // Constructor to initialize the attributes
+    Student(String n, String i, float c) {
+        name = n;
+        id = i; 
+        cgpa = c;
+    }
+    
+    // Method to print student details
+    void printStdDetails() {
+        System.out.println("Name: " + name + ", ID: " + id + ", CGPA: " + cgpa);
+    }
+}
+
+public class MyClass {
+    public static void main(String args[]) {
+        // Create an array of 3 Student objects
+        Student std[] = new Student[3];
+        
+        Scanner sc = new Scanner(System.in);
+        
+        // Input loop for student details
+        for(int i = 0; i < 3; i++) {
+            System.out.println("Enter details for student " + (i + 1) + ":");
+            System.out.print("Name: ");
+            String tmpName = sc.next();
+            System.out.print("ID: ");
+            String tmpId = sc.next();
+            System.out.print("CGPA: ");
+            float tmpRes = sc.nextFloat();
+
+            // Create a new Student object and assign it to the array
+            std[i] = new Student(tmpName, tmpId, tmpRes);
+        } 
+        
+        // Close the Scanner
+        sc.close();
+        
+        // Output loop to print student details
+        System.out.println("\nStudent Details:");
+        for(int i = 0; i < 3; i++) {
+            std[i].printStdDetails();
+        } 
+    }
+}
