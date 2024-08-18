@@ -1,0 +1,39 @@
+//Example of Method Overloading
+public class MathOperations {
+    
+    // Method to add two integers
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    // Overloaded method to add three integers
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    // Overloaded method to add two double values
+    public double add(double a, double b) {
+        return a + b;
+    }
+
+    // Overloaded method to concatenate two strings
+    public String add(String a, String b) {
+        return a + b;
+    }
+
+    // Overloaded method to concatenate three strings
+    public String add(String a, String b, String c) {
+        return a + b + c;
+    }
+    
+    public static void main(String[] args) {
+        MathOperations math = new MathOperations();
+
+        // Calling different overloaded add methods
+        System.out.println("Sum of two integers: " + math.add(5, 10));
+        System.out.println("Sum of three integers: " + math.add(1, 2, 3));
+        System.out.println("Sum of two doubles: " + math.add(5.5, 10.2));
+        System.out.println("Concatenation of two strings: " + math.add("Hello", "World"));
+        System.out.println("Concatenation of three strings: " + math.add("Java", " is", " fun!"));
+    }
+}
