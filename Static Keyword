@@ -1,0 +1,103 @@
+The static keyword is used to indicate that a particular member belongs to the class itself, rather than to instances of the class.
+This means that the static member can be accessed without creating an object of the class. The static keyword can be applied to variables, methods, blocks, and nested classes.
+Key Uses of the static Keyword
+Static Variables (Class Variables)
+Static Methods
+Static Blocks
+Static Nested Classes
+public class University {
+
+    // Static variable (shared across all instances)
+    static String universityName;
+    static int totalStudents = 0;
+
+    // Instance variables
+    String studentName;
+    int studentID;
+
+    // Static block to initialize static variables
+    static {
+        universityName = "Global University";
+        System.out.println("Static block executed. University Name set to: " + universityName);
+    }
+
+    // Constructor
+    public University(String studentName, int studentID) {
+        this.studentName = studentName;
+        this.studentID = studentID;
+        totalStudents++; // Increment the total number of students
+    }
+
+    // Static method to display total students
+    public static void displayTotalStudents() {
+        System.out.println("Total number of students: " + totalStudents);
+    }
+
+    // Instance method to display student details
+    public void displayStudentDetails() {
+        System.out.println("Student Name: " + studentName);
+        System.out.println("Student ID: " + studentID);
+        System.out.println("University: " + universityName);
+    }
+
+    // Static nested class
+    static class UniversityInfo {
+        void displayUniversityInfo() {
+            System.out.println("Welcome to " + universityName + "!");
+            System.out.println("Currently, we have " + totalStudents + " students enrolled.");
+        }
+    }
+
+    public static void main(String[] args) {
+        // Create student objects
+        University student1 = new University("Alice", 101);
+        University student2 = new University("Bob", 102);
+
+        // Display student details
+        student1.displayStudentDetails();
+        student2.displayStudentDetails();
+
+        // Display total number of students using the static method
+        University.displayTotalStudents();
+
+        // Accessing the static nested class
+        University.UniversityInfo info = new University.UniversityInfo();
+        info.displayUniversityInfo();
+    }
+}
+
+Breakdown of the Example:
+
+Static Variable (universityName, totalStudents):
+
+universityName is a static variable shared by all instances of the University class.
+totalStudents keeps track of the total number of students and is incremented every time a new University object is created.
+
+Static Block:
+
+The static block initializes the universityName when the class is first loaded. This block runs before any objects are created or static methods are called.
+Static Method (displayTotalStudents()):
+
+This method displays the total number of students and can be called without creating an instance of the University class.
+
+Static Nested Class (UniversityInfo):
+
+The static nested class UniversityInfo contains a method displayUniversityInfo() that can access the static members of the outer class, like universityName and totalStudents.
+You can create an instance of the static nested class without needing an instance of the outer class.
+
+Output:
+
+Static block executed. University Name set to: Global University
+Student Name: Alice
+Student ID: 101
+University: Global University
+Student Name: Bob
+Student ID: 102
+University: Global University
+Total number of students: 2
+Welcome to Global University!
+Currently, we have 2 students enrolled.
+
+//Useless topic for my opinion.
+
+
