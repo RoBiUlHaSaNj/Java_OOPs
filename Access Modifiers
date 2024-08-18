@@ -1,0 +1,111 @@
+
+In Java, access modifiers are keywords that define the visibility and accessibility of classes, methods, variables, and constructors. They control where these members can be accessed from—whether from the same class, different classes, within the same package, or from subclasses.
+
+Types of Access Modifiers
+Java has four main access modifiers:
+
+1.private
+2.default (no modifier)
+3.protected
+4.public
+1. private
+Scope: Accessible only within the same class.
+Usage: Used to encapsulate class details, ensuring that certain variables or methods are not accessible outside the class.
+
+
+public class Example {
+    private int privateVariable = 10;
+
+    private void privateMethod() {
+        System.out.println("This is a private method.");
+    }
+
+    public void accessPrivate() {
+        // Private members are accessible within the same class
+        System.out.println("Private Variable: " + privateVariable);
+        privateMethod();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Example obj = new Example();
+        // obj.privateVariable; // Error: privateVariable has private access in Example
+        // obj.privateMethod(); // Error: privateMethod() has private access in Example
+
+        obj.accessPrivate(); // Works fine, since accessPrivate() is public
+    }
+}
+
+2. default (no modifier)
+
+Scope: Accessible only within the same package.
+Usage: Provides package-level access, which is useful for organizing classes that are closely related.
+
+class DefaultExample {
+    int defaultVariable = 20;
+
+    void defaultMethod() {
+        System.out.println("This is a default method.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        DefaultExample obj = new DefaultExample();
+        System.out.println("Default Variable: " + obj.defaultVariable); // Accessible within the same package
+        obj.defaultMethod(); // Accessible within the same package
+    }
+}
+3. protected
+
+Scope: Accessible within the same package and by subclasses (even if they are in different packages).
+Usage: Often used in inheritance to allow subclasses to access certain variables and methods from the parent class.
+
+
+package package1;//extantion or files
+public class ProtectedExample {
+    protected int protectedVariable = 30;
+
+    protected void protectedMethod() {
+        System.out.println("This is a protected method.");
+    }
+}
+
+package package2;
+
+import package1.ProtectedExample;
+
+public class SubClass extends ProtectedExample {
+    public void accessProtected() {
+        System.out.println("Protected Variable: " + protectedVariable); // Accessible through inheritance
+        protectedMethod(); // Accessible through inheritance
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        SubClass obj = new SubClass();
+        obj.accessProtected();
+    }
+}
+4. public
+
+Scope: Accessible from any other class, regardless of the package.
+Usage: Used to allow full access to classes, methods, and variables from anywhere in the program.
+
+public class PublicExample {
+    public int publicVariable = 40;
+
+    public void publicMethod() {
+        System.out.println("This is a public method.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        PublicExample obj = new PublicExample();
+        System.out.println("Public Variable: " + obj.publicVariable); // Accessible from anywhere
+        obj.publicMethod(); // Accessible from anywhere
+    }
+}
