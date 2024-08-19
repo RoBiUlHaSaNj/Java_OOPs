@@ -1,0 +1,139 @@
+Inheritance is a fundamental concept in Java that allows one class to inherit properties (fields) and behaviors (methods) from another class.
+This promotes code reusability and establishes a relationship between classes.
+
+
+hare 
+1. Inheritance Basics
+2. Types of Inheritance
+3. Method Overriding
+4. Access Control
+5. Final Keyword
+6. Example:
+
+
+
+Basic Concepts
+
+class Animal {
+  // methods and fields
+}
+
+// use of extends keyword
+// to perform inheritance
+class Dog extends Animal {
+
+  // methods and fields of Animal
+  // methods and fields of Dog
+}
+
+1. Inheritance Basics:
+Superclass and Subclass: A superclass (or parent class) is the class from which properties and methods are inherited by another class, known as the subclass (or child class).
+extends Keyword: Used to define a subclass that inherits from a superclass.
+
+
+
+class SubclassName extends SuperclassName {
+    // additional fields and methods
+}
+
+
+2. Types of Inheritance:
+Single Inheritance: One subclass inherits from one superclass.
+Multilevel Inheritance: A chain of inheritance where a subclass is derived from another subclass.
+Hierarchical Inheritance: Multiple subclasses inherit from a single superclass.
+Note: Java does not support multiple inheritance (a class cannot inherit from more than one class) directly, but it can be achieved through interfaces.
+
+
+
+
+// Superclass
+class Animal {
+    void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+
+// Subclass
+class Dog extends Animal {
+    void bark() {
+        System.out.println("The dog barks.");
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat(); // Inherited method
+        dog.bark(); // Method from Dog class
+    }
+}
+
+
+
+3. Method Overriding:
+A subclass can provide a specific implementation of a method already defined in its superclass.
+super Keyword: Used to refer to the superclass's method or constructor.
+
+
+
+
+class Animal {
+    Animal() {
+        System.out.println("Animal constructor");
+    }
+}
+
+class Dog extends Animal {
+    Dog() {
+        super(); // Calls the superclass constructor
+        System.out.println("Dog constructor");
+    }
+}
+
+
+4. Access Control
+private: Not accessible in the subclass.
+protected: Accessible within the subclass.
+public: Accessible everywhere.
+default (no modifier): Accessible within the same package.
+
+
+5. Final Keyword:
+A class marked as final cannot be extended.
+A method marked as final cannot be overridden.
+
+
+
+final class Animal {
+    // Class cannot be extended
+}
+
+Example of Method Overriding and super Keyword
+
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        super.sound(); // Calls the superclass method
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.sound(); // Calls the overridden method
+    }
+}
+In this example, the Dog class overrides the sound method of the Animal class and uses the super keyword to call the superclass method before adding its own behavior.
+
+
+
+
+
