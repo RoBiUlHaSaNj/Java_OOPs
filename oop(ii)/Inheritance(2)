@@ -1,0 +1,85 @@
+Abstract classes and abstract methods are key concepts in Java's object-oriented programming,
+providing a way to define classes and methods that are meant to be extended and implemented by subclasses.
+
+1. Abstract Class:
+An abstract class is a class that cannot be instantiated on its own. It is meant to be subclassed,
+and it can contain both abstract methods (without a body) and non-abstract methods (with a body).
+Abstract classes can also have member variables, constructors, and concrete methods.
+Abstract classes are declared using the abstract keyword.
+
+
+abstract class Animal {
+    // Abstract method (does not have a body)
+    abstract void sound();
+
+    // Concrete method
+    void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+In this example, Animal is an abstract class. It has an abstract method sound() that must be implemented by any subclass,
+and a concrete method eat() that can be inherited and used by subclasses.
+
+
+
+2. Abstract Methods:
+An abstract method is a method that is declared without an implementation (without a method body). It is meant to be overridden by subclasses.
+Abstract methods can only be defined in abstract classes.
+Subclasses of an abstract class are required to provide implementations for all abstract methods, unless the subclass is also abstract.
+Example:
+
+
+abstract class Animal {
+    abstract void sound(); // Abstract method
+
+    void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+
+class Dog extends Animal {
+    // Implementing the abstract method
+    void sound() {
+        System.out.println("The dog barks.");
+    }
+}
+
+class Cat extends Animal {
+    // Implementing the abstract method
+    void sound() {
+        System.out.println("The cat meows.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal dog = new Dog();
+        dog.sound(); // Output: The dog barks.
+        dog.eat();   // Output: This animal eats food.
+
+        Animal cat = new Cat();
+        cat.sound(); // Output: The cat meows.
+        cat.eat();   // Output: This animal eats food.
+    }
+}
+In this example:
+
+The Animal class is abstract and defines an abstract method sound().
+Dog and Cat are subclasses of Animal and provide concrete implementations of the sound() method.
+The Main class demonstrates creating instances of Dog and Cat, and calling the sound() and eat() methods.
+
+
+3. Key Points:
+
+An abstract class can have both abstract methods (without a body) and concrete methods (with a body).
+If a class contains at least one abstract method, the class must be declared abstract.
+Abstract classes cannot be instantiated directly; they must be subclassed.
+A subclass of an abstract class must implement all abstract methods of the superclass unless the subclass is also abstract.
+
+
+4. When to Use Abstract Classes:
+
+
+Use abstract classes when you want to define a common base class with some common code (concrete methods) and some 
+methods that must be implemented by subclasses.
+Abstract classes are useful when creating a template for other classes to follow.
