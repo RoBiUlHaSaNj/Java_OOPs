@@ -4,6 +4,7 @@ Talk about Abstract
 Abstract classes and abstract methods are key concepts in Java's object-oriented programming,
 providing a way to define classes and methods that are meant to be extended and implemented by subclasses.
 
+
 1. Abstract Class:
 An abstract class is a class that cannot be instantiated on its own. It is meant to be subclassed,
 and it can contain both abstract methods (without a body) and non-abstract methods (with a body).
