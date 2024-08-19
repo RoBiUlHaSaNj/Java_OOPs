@@ -1,0 +1,125 @@
+
+Talk about Java Interface
+
+Interface is a reference type that can contain only constants, method signatures, default methods, 
+static methods,and nested types. Interfaces are used to specify a set of methods that a class must 
+implement. They provide a way to achieve abstraction and multiple inheritance in Java.
+
+
+An interface is defined using the interface keyword.
+
+It can contain abstract methods (methods without a body),default methods, and static methods.
+An interface cannot contain instance fields or constructors.
+
+
+
+
+interface Animal {
+    // Abstract method
+    void sound();
+
+    // Default method
+    default void eat() {
+        System.out.println("This animal eats food.");
+    }
+
+    // Static method
+    static void sleep() {
+        System.out.println("This animal sleeps.");
+    }
+}
+
+
+Implementing Interfaces:
+
+A class implements an interface using the implements keyword.
+The class must provide concrete implementations for all abstract methods defined in the interface.
+A class can implement multiple interfaces, allowing for a form of multiple inheritance.
+
+
+
+class Dog implements Animal {
+    // Providing implementation for the abstract method
+    public void sound() {
+        System.out.println("The dog barks.");
+    }
+}
+
+class Cat implements Animal {
+    // Providing implementation for the abstract method
+    public void sound() {
+        System.out.println("The cat meows.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.sound(); // Output: The dog barks.
+        dog.eat();   // Output: This animal eats food.
+        
+        Cat cat = new Cat();
+        cat.sound(); // Output: The cat meows.
+        cat.eat();   // Output: This animal eats food.
+
+        // Static method call
+        Animal.sleep(); // Output: This animal sleeps.
+    }
+}
+
+
+Default Methods:
+
+Default methods in interfaces allow you to provide a default implementation for methods.
+This feature was introduced in Java 8 and helps in adding new methods to interfaces without breaking existing implementations.
+Static Methods:
+
+Interfaces can also contain static methods.
+Static methods in interfaces are not inherited by implementing classes and must be called using the interface name.
+Multiple Inheritance:
+
+Java does not support multiple inheritance with classes, but interfaces provide a way to achieve multiple inheritance by allowing a class to implement multiple interfaces.
+
+interface Swimmer {
+    void swim();
+}
+
+interface Flyer {
+    void fly();
+}
+
+class Duck implements Swimmer, Flyer {
+    public void swim() {
+        System.out.println("The duck swims.");
+    }
+
+    public void fly() {
+        System.out.println("The duck flies.");
+    }
+}
+
+
+Extending Interfaces:
+
+Interfaces can extend other interfaces. When an interface extends another interface, it inherits the abstract methods from the parent interface.
+
+interface Animal {
+    void sound();
+}
+
+interface Pet extends Animal {
+    void play();
+}
+
+class Dog implements Pet {
+    public void sound() {
+        System.out.println("The dog barks.");
+    }
+
+    public void play() {
+        System.out.println("The dog plays fetch.");
+    }
+}
+
+
+
