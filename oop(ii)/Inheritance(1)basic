@@ -45,31 +45,151 @@ Hierarchical Inheritance: Multiple subclasses inherit from a single superclass.
 Note: Java does not support multiple inheritance (a class cannot inherit from more than one class) directly, but it can be achieved through interfaces.
 
 
+// 1.concept of single inheritance
 
 
-// Superclass
-class Animal {
-    void eat() {
-        System.out.println("This animal eats food.");
+// Parent class
+class One {
+    public void print_geek()
+    {
+        System.out.println("Geeks");
     }
 }
 
-// Subclass
-class Dog extends Animal {
-    void bark() {
-        System.out.println("The dog barks.");
+class Two extends One {
+    public void print_for() { System.out.println("for"); }
+}
+
+// Driver class
+public class Main {
+      // Main function
+    public static void main(String[] args)
+    {
+        Two g = new Two();
+        g.print_geek();
+        g.print_for();
+        g.print_geek();
     }
 }
 
-// Main class
+
+
+//2. Multilevel Inheritance
+
+// Parent class One
+class One {
+    // Method to print "Geeks"
+    public void print_geek() {
+        System.out.println("Geeks");
+    }
+}
+
+// Child class Two inherits from class One
+class Two extends One {
+    // Method to print "for"
+    public void print_for() {
+        System.out.println("for");
+    }
+}
+
+// Child class Three inherits from class Two
+class Three extends Two {
+    // Method to print "Geeks"
+    public void print_lastgeek() {
+        System.out.println("Geeks");
+    }
+}
+
+// Driver class
 public class Main {
     public static void main(String[] args) {
-        Dog dog = new Dog();
-        dog.eat(); // Inherited method
-        dog.bark(); // Method from Dog class
+        // Creating an object of class Three
+        Three g = new Three();
+        
+        // Calling method from class One
+        g.print_geek();
+        
+        // Calling method from class Two
+        g.print_for();
+        
+        // Calling method from class Three
+        g.print_lastgeek();
     }
 }
 
+
+
+//3. concept of Hierarchical  inheritance
+
+class A {
+    public void print_A() { System.out.println("Class A"); }
+}
+
+class B extends A {
+    public void print_B() { System.out.println("Class B"); }
+}
+
+class C extends A {
+    public void print_C() { System.out.println("Class C"); }
+}
+
+class D extends A {
+    public void print_D() { System.out.println("Class D"); }
+}
+
+// Driver Class
+public class Test {
+    public static void main(String[] args)
+    {
+        B obj_B = new B();
+        obj_B.print_A();
+        obj_B.print_B();
+
+        C obj_C = new C();
+        obj_C.print_A();
+        obj_C.print_C();
+
+        D obj_D = new D();
+        obj_D.print_A();
+        obj_D.print_D();
+    }
+}
+
+
+
+// 4.concept of Multiple inheritance
+
+
+interface One {
+    public void print_geek();
+}
+
+interface Two {
+    public void print_for();
+}
+
+interface Three extends One, Two {
+    public void print_geek();
+}
+class Child implements Three {
+    @Override public void print_geek()
+    {
+        System.out.println("Geeks");
+    }
+
+    public void print_for() { System.out.println("for"); }
+}
+
+// Drived class
+public class Main {
+    public static void main(String[] args)
+    {
+        Child c = new Child();
+        c.print_geek();
+        c.print_for();
+        c.print_geek();
+    }
+}
 
 
 3. Method Overriding:
