@@ -82,8 +82,8 @@ This method displays the total number of students and can be called without crea
 
 Static Nested Class (UniversityInfo):
 
-The static nested class UniversityInfo contains a method displayUniversityInfo() that can access the static members of the outer class, like universityName and totalStudents.
-You can create an instance of the static nested class without needing an instance of the outer class.
+The static nested class UniversityInfo contains a method displayUniversityInfo() that can access the static members of the outer class,
+like universityName and totalStudents.You can create an instance of the static nested class without needing an instance of the outer class.
 
 Output:
 
