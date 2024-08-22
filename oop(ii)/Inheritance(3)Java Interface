@@ -1,6 +1,8 @@
 
 Talk about Java Interface
 
+
+
 Interface is a reference type that can contain only constants, method signatures, default methods, 
 static methods,and nested types. Interfaces are used to specify a set of methods that a class must 
 implement. They provide a way to achieve abstraction and multiple inheritance in Java.
