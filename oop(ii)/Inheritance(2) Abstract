@@ -87,3 +87,35 @@ A subclass of an abstract class must implement all abstract methods of the super
 Use abstract classes when you want to define a common base class with some common code (concrete methods) and some 
 methods that must be implemented by subclasses.
 Abstract classes are useful when creating a template for other classes to follow.
+
+
+
+
+Difference Between Abstract Class and Interface:
+
+1. Abstract Class:
+Purpose: Abstract classes are used to provide a common base class for other classes, where some methods might have implementations, 
+   and some might be abstract (i.e., they have no implementation in the base class).
+Inheritance: A class can inherit from only one abstract class (single inheritance).
+Methods: Can have both abstract methods (without implementation) and concrete methods (with implementation).
+Fields/Properties: Can have instance variables and fields, and can also include constructors.
+Accessibility: Can define access modifiers (like public, protected, private) for methods and properties.
+Use Case: Used when you want to share code among several closely related classes.
+
+2. Interface:
+Purpose: Interfaces are used to define a contract that other classes must follow. They only contain method signatures (no implementations) and constant fields.
+Inheritance: A class can implement multiple interfaces (multiple inheritance).
+Methods: All methods in an interface are implicitly abstract (before Java 8) and must be implemented by the classes that implement the interface.
+Fields/Properties: Only constants (static final fields) are allowed in interfaces.
+Accessibility: All methods in an interface are implicitly public, and you cannot define other access modifiers.
+Use Case: Used when you want to specify the behavior a class should implement, without dictating how the behavior is implemented.
+
+Key Differences:
+Implementation: Abstract classes can provide some implementation, while interfaces cannot (in traditional versions). However, modern languages (e.g., Java 8 and later) allow default methods in interfaces.
+Multiple Inheritance: Interfaces support multiple inheritance, while abstract classes do not.
+Fields: Abstract classes can have fields and constructors, whereas interfaces cannot (except for constants).
+Flexibility: Interfaces provide more flexibility because a class can implement multiple interfaces, whereas it can extend only one abstract class.
+
+
+
+
