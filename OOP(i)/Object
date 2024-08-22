@@ -1,6 +1,11 @@
 What is an Object in Java?
 An object is an instance of a class. When a class is defined, no memory is allocated until an object of that class is created.
-An object is a real-world entity, such as a car, a person, or a book. Objects have two main characteristics:
+In Java, an object is an instance of a class. It is a real-world entity that has a state (attributes) and behavior (methods). 
+Objects are the fundamental building blocks of Java programs, and they interact with each other through method calls to perform tasks.
+An object is a real-world entity, such as a car, a person, or a book.
+
+
+Objects have two main characteristics:
 
 State (attributes or fields): These are represented by variables in a class. For example, a Car object might have a color, model, and year.
 
