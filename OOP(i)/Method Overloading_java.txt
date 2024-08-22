@@ -1,39 +1,132 @@
-//Example of Method Overloading
-public class MathOperations {
-    
+Method Overloading in Java is a feature that allows a class to have more than one method with the same name, but with different parameter lists. The parameter list can vary by the number of parameters, the types of parameters, or the order of parameters. Method overloading is an example of compile-time polymorphism in Java.
+
+Key Points of Method Overloading:
+Same Method Name, Different Parameters:
+
+Methods must have the same name but differ in the number or types of parameters (also known as the method signature).
+Compile-time Polymorphism:
+
+The method to be called is determined at compile time based on the method signature.
+Cannot Overload by Return Type Alone:
+
+Method overloading cannot be achieved by changing only the return type of the methods. The compiler must be able to distinguish the methods by their parameters.
+Overloading Constructors:
+
+Constructors can also be overloaded, allowing objects to be initialized in different ways.
+
+
+1. Overloading by Number of Parameters:
+
+
+class Calculator {
     // Method to add two integers
-    public int add(int a, int b) {
+    int add(int a, int b) {
         return a + b;
     }
 
     // Overloaded method to add three integers
-    public int add(int a, int b, int c) {
+    int add(int a, int b, int c) {
         return a + b + c;
-    }
-
-    // Overloaded method to add two double values
-    public double add(double a, double b) {
-        return a + b;
-    }
-
-    // Overloaded method to concatenate two strings
-    public String add(String a, String b) {
-        return a + b;
-    }
-
-    // Overloaded method to concatenate three strings
-    public String add(String a, String b, String c) {
-        return a + b + c;
-    }
-    
-    public static void main(String[] args) {
-        MathOperations math = new MathOperations();
-
-        // Calling different overloaded add methods
-        System.out.println("Sum of two integers: " + math.add(5, 10));
-        System.out.println("Sum of three integers: " + math.add(1, 2, 3));
-        System.out.println("Sum of two doubles: " + math.add(5.5, 10.2));
-        System.out.println("Concatenation of two strings: " + math.add("Hello", "World"));
-        System.out.println("Concatenation of three strings: " + math.add("Java", " is", " fun!"));
     }
 }
+
+public class Main {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        System.out.println(calc.add(10, 20));        // Outputs 30
+        System.out.println(calc.add(10, 20, 30));    // Outputs 60
+    }
+}
+
+
+2. Overloading by Type of Parameters:
+
+
+class Display {
+    // Method to display an integer
+    void show(int a) {
+        System.out.println("Integer: " + a);
+    }
+
+    // Overloaded method to display a string
+    void show(String a) {
+        System.out.println("String: " + a);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Display display = new Display();
+        display.show(100);             // Outputs "Integer: 100"
+        display.show("Hello, Java!");  // Outputs "String: Hello, Java!"
+    }
+}
+
+
+3. Overloading by Order of Parameters:
+
+
+class PrintData {
+    // Method to print string and integer
+    void print(String s, int a) {
+        System.out.println("String: " + s + ", Integer: " + a);
+    }
+
+    // Overloaded method to print integer and string
+    void print(int a, String s) {
+        System.out.println("Integer: " + a + ", String: " + s);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        PrintData pd = new PrintData();
+        pd.print("Java", 101);    // Outputs "String: Java, Integer: 101"
+        pd.print(202, "Code");    // Outputs "Integer: 202, String: Code"
+    }
+}
+
+
+4. Overloading Constructors:
+
+
+class Box {
+    double width, height, depth;
+
+    // Constructor with no parameters
+    Box() {
+        width = height = depth = 0;
+    }
+
+    // Constructor with one parameter
+    Box(double len) {
+        width = height = depth = len;
+    }
+
+    // Constructor with three parameters
+    Box(double w, double h, double d) {
+        width = w;
+        height = h;
+        depth = d;
+    }
+
+    double volume() {
+        return width * height * depth;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Box box1 = new Box();              // Default constructor
+        Box box2 = new Box(10);            // Single-parameter constructor
+        Box box3 = new Box(10, 20, 30);    // Three-parameter constructor
+
+        System.out.println("Volume of box1: " + box1.volume());  // Outputs 0.0
+        System.out.println("Volume of box2: " + box2.volume());  // Outputs 1000.0
+        System.out.println("Volume of box3: " + box3.volume());  // Outputs 6000.0
+    }
+}
+
+. Method overloading is achieved at compile time, so the method signature must be distinct.
+. It is possible to overload methods that have the same name but differ in their access modifiers or exceptions thrown.
+. Overloaded methods can vary in their return types, but this alone is not enough to create a distinct overloaded method.
