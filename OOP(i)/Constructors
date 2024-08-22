@@ -1,3 +1,4 @@
+In Java, a constructor is a special method that is called when an object is instantiated. Constructors are used to initialize the newly created object. A constructor has the same name as the class and does not have a return type, not even void. 
 
 public class Car {
     // Attributes of the Car class
