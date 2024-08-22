@@ -1,0 +1,128 @@
+
+Hare talk about dimond problem
+
+"Multiple inheritance in java is the capability of creating a single class with multiple superclasses. Unlike some other popular object oriented 
+programming languages like C++, java doesn’t provide support for multiple inheritance in classes. Java doesn’t support multiple inheritances
+in classes because it can lead to diamond problem andrather than providing some complex way to solve it, there are better ways through which
+we can achieve the same result as multiple inheritances."-----https://www.digitalocean.com/community/tutorials/multiple-inheritance-in-java(maybe best answer  for  multiple inheritance)
+
+
+
+
+The Diamond Problem occurs when a class inherits from two classes that both inherit from a common base class. The name "Diamond Problem" comes from the shape of the inheritance diagram
+    A
+   / \
+  B   C
+   \ /
+    D
+
+Here’s how it works:
+
+Class A is the base class.
+Classes B and C both inherit from Class A.
+Class D inherits from both B and C.
+
+In this scenario, Class D has two paths to inherit from Class A:
+
+One path through Class B (D -> B -> A)
+Another path through Class C (D -> C -> A)
+This creates ambiguity. If Class A has a method (e.g., foo()), and Class D calls foo(), which version of foo() should be called? The one from Class B’s inheritance of A, or from Class C’s?
+
+
+
+1.C++ (Virtual Inheritance):
+C++ handles this issue using virtual inheritance. By making the inheritance of Class A virtual in classes B and C,
+C++ ensures that only one instance of Class A is inherited by Class D, resolving the ambiguity.
+
+class A {
+public:
+    void foo() { std::cout << "A's foo" << std::endl; }
+};
+
+class B : virtual public A {
+    // B's implementation
+};
+
+class C : virtual public A {
+    // C's implementation
+};
+
+class D : public B, public C {
+    // D's implementation
+};
+
+int main() {
+    D d;
+    d.foo(); // No ambiguity, A's foo is called
+    return 0;
+}
+
+Here, d.foo() calls A's foo() unambiguously because of virtual inheritance.
+
+
+
+2. Java (Interfaces):
+
+Java avoids the diamond problem with its single inheritance model, meaning a class can only inherit from one other class.
+However, Java allows multiple inheritance of interfaces, which do not contain state, hence avoiding the diamond problem.
+If an interface has a default method (from Java 8 onward), and two interfaces provide the same method, 
+the inheriting class must override the method to resolve the conflict:
+
+
+interface A {
+    default void foo() {
+        System.out.println("A's foo");
+    }
+}
+
+interface B extends A {
+    default void foo() {
+        System.out.println("B's foo");
+    }
+}
+
+interface C extends A {
+    default void foo() {
+        System.out.println("C's foo");
+    }
+}
+
+class D implements B, C {
+    public void foo() {
+        B.super.foo();  // Or C.super.foo(); to choose one
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        D d = new D();
+        d.foo(); // Resolves conflict, calls B's foo or C's foo
+    }
+}
+
+Here, the ambiguity is resolved by explicitly specifying which interface's foo() method to use.
+
+
+
+3. Python (Method Resolution Order - MRO):
+Python uses the Method Resolution Order (MRO) to handle the diamond problem. It determines the order in which base classes are searched when
+calling a method. Python uses the C3 linearization algorithm to determine this order.
+
+
+class A:
+    def foo(self):
+        print("A's foo")
+
+class B(A):
+    pass
+
+class C(A):
+    pass
+
+class D(B, C):
+    pass
+
+d = D()
+d.foo()  # Calls A's foo, MRO decides the path
+In this case, d.foo() will correctly call A's foo() method, and Python handles the inheritance order through MRO.
+
