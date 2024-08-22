@@ -109,3 +109,9 @@ public class Main {
         obj.publicMethod(); // Accessible from anywhere
     }
 }
+
+At the  end :
+Private: Within the class
+Default: Within the package
+Protected: Within the package and child classes of other package
+Public: Anywhere
