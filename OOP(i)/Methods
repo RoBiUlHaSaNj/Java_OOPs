@@ -124,4 +124,5 @@ class Car {
 The startEngine() method cannot be overridden in any subclass of Car.
 Summary
 In OOP, methods are integral to defining the capabilities of objects. Understanding the different types of methods allows developers to design classes that are flexible,
-reusable, and maintainable. Each type of method serves a specific purpose, whether it’s controlling access to data, providing shared functionality, or ensuring that certain behaviors are enforced across all instances of a class.
+reusable, and maintainable. Each type of method serves a specific purpose, whether it’s controlling access to data, providing shared functionality,
+or ensuring that certain behaviors are enforced across all instances of a class.
