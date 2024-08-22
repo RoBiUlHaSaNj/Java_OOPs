@@ -1,0 +1,139 @@
+Polymorphism
+
+Polymorphism in Java is one of the core concepts of object-oriented programming (OOP), 
+allowing objects to be treated as instances of their parent class,rather than their actual class.
+The term "polymorphism"means "many shapes" and refers to the ability of a single function or method 
+to operate on different types of objects.
+
+
+Types of Polymorphism in Java
+
+1.Compile-time Polymorphism (Static Polymorphism):
+
+Also known as method overloading.
+Occurs when multiple methods in the same class have the same name but different parameters (different type, number, or order of parameters).
+The decision about which method to invoke is made during compile-time.
+
+
+class MathOperations {
+    // Method with two parameters
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    // Method with three parameters
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    // Method with double parameters
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MathOperations math = new MathOperations();
+        System.out.println(math.add(5, 10));        // Calls add(int, int)
+        System.out.println(math.add(5, 10, 15));    // Calls add(int, int, int)
+        System.out.println(math.add(5.5, 10.5));    // Calls add(double, double)
+    }
+}
+
+
+2.Runtime Polymorphism (Dynamic Polymorphism):
+
+Also known as method overriding.
+Occurs when a subclass provides a specific implementation of a method that is already defined in its superclass.
+The decision about which method to invoke is made at runtime.
+
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myAnimal = new Animal(); // Animal reference, Animal object
+        Animal myDog = new Dog();       // Animal reference, Dog object
+        Animal myCat = new Cat();       // Animal reference, Cat object
+
+        myAnimal.sound();  // Calls Animal's sound
+        myDog.sound();     // Calls Dog's sound (runtime polymorphism)
+        myCat.sound();     // Calls Cat's sound (runtime polymorphism)
+    }
+}
+
+# Key Points about Polymorphism in Java:
+ 
+. Method Overloading (Compile-time Polymorphism):
+
+Allows different methods with the same name in the same class to be called based on different parameters.
+The method signature (name + parameter list) is used to distinguish between overloaded methods.
+Cannot be achieved by changing only the return type of the methods.
+
+. Method Overriding (Runtime Polymorphism):
+
+Allows a subclass to provide a specific implementation of a method that is already defined in its superclass.
+The overridden method must have the same name, return type, and parameter list as the method in the superclass.
+Can be achieved only with inheritance.
+Uses the concept of dynamic method dispatch, where the JVM determines the appropriate method to invoke at runtime based on the object's actual class.
+
+. Advantages of Polymorphism:
+
+Code Reusability: The same method can work with different types of data or objects, making the code more reusable.
+Maintainability: Makes it easier to manage and extend the code as you can override methods in subclasses without altering the superclass.
+Flexibility: Allows for creating flexible and scalable programs where new object types can be added with minimal changes to existing code.
+
+3 Polymorphism and Interfaces:
+Polymorphism in Java is also closely associated with interfaces. A class can 
+implement multiple interfaces, and an object of that class can be treated as an 
+instance of any of the interfaces it implements.
+
+
+
+interface Animal {
+    void sound();
+}
+
+class Dog implements Animal {
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat implements Animal {
+    public void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myDog = new Dog(); // Interface reference, Dog object
+        Animal myCat = new Cat(); // Interface reference, Cat object
+
+        myDog.sound();  // Calls Dog's sound
+        myCat.sound();  // Calls Cat's sound
+    }
+}
+In this example, both Dog and Cat implement the Animal interface,
+and polymorphism allows the sound() method to be called on Animal references,
+leading to the appropriate method being invoked at runtime based on the actual object type.
+
