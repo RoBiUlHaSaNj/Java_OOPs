@@ -18,7 +18,9 @@ A static nested class is a nested class that is declared with the static keyword
 It does not have access to instance variables and methods of the outer class; it can only access static members.
 A static nested class can be instantiated without creating an instance of the outer class.
 
-
+When to Use:
+When the nested class logically belongs to the outer class but does not require access to the outer class’s instance members.
+To group classes that are only used in one place, thus keeping the code cleaner and more readable.
 
 
 class OuterClass {
