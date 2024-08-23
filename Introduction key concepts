@@ -1,11 +1,68 @@
-1. Objects and Classes
-Object: An instance of a class that represents a specific entity with its own state and behavior.
-Class: A blueprint or template that defines the properties (attributes) and behaviors (methods) of objects.
+1. Class and Object
+Class: A class is a blueprint for creating objects.It defines a data structure and behavior by 
+specifying the properties (fields/attributes) and methods (functions) that the objects created from the class will have.
+
+Object: An object is an instance of a class. It represents a specific entity with the attributes and behaviors defined by its class.
+
 2. Encapsulation
-Encapsulation is the practice of bundling data (attributes) and methods (functions) that operate on the data into a single unit or class. This hides the internal state of the object from the outside world and only exposes what is necessary.
+Encapsulation: Encapsulation is the mechanism of bundling the data (fields) and the methods (functions)
+that operate on the data into a single unit, or class. It also involves restricting access to certain components, 
+usually by making fields private and providing public getter and setter methods to modify and view the fields' values.
+
 3. Inheritance
-Inheritance allows one class to inherit the properties and behaviors of another class. This promotes code reuse and establishes a natural hierarchy between classes. For example, a Dog class might inherit from an Animal class.
+Inheritance: Inheritance is the mechanism by which one class (child or subclass) can inherit the properties and 
+methods of another class (parent or superclass). This promotes code reusability and establishes a relationship between 
+the parent and child classes.
+
+
 4. Polymorphism
-Polymorphism enables objects to be treated as instances of their parent class rather than their actual class. This means that the same method or property can behave differently depending on the object’s class. Method overriding (runtime polymorphism) and method overloading (compile-time polymorphism) are key aspects.
+Polymorphism: Polymorphism allows objects to be treated as instances of their parent class rather than their actual class. 
+It allows a single method to perform different tasks based on the object that it is acting upon.
+
+Method Overloading: Same method name but different parameters (within the same class).
+Method Overriding: A child class provides a specific implementation of a method that is already defined in its parent class.
+
+
 5. Abstraction
-Abstraction involves hiding complex implementation details and showing only the essential features of an object. Abstract classes and interfaces are used to define abstract concepts and provide a common interface for different implementations.
+Abstraction: Abstraction is the concept of hiding the complex implementation details and showing only 
+the essential features of an object. In Java, abstraction can be achieved using abstract classes and interfaces.
+
+Abstract Class: A class that cannot be instantiated on its own and may contain abstract methods (methods without a body).
+
+Interface: An interface is a reference type that contains abstract methods that a class must implement. 
+ Unlike abstract classes, a class can implement multiple interfaces.
+
+
+6. Association, Aggregation, and Composition
+
+Association: A relationship between two objects where one object uses or interacts with another. It's a loosely coupled relationship.
+
+class Driver {
+    private String name;
+    private Car car;
+}
+
+Aggregation: A specialized form of Association where the child can exist independently of the parent. It represents a "Has-A" relationship.
+
+
+class Department {
+    private String name;
+}
+
+class University {
+    private Department department; // Aggregation
+}
+
+Composition: A stronger form of Aggregation where the child cannot exist independently of the parent. 
+    If the parent object is destroyed, the child objects are also destroyed.
+
+
+class Engine {
+    private String type;
+}
+
+class Car {
+    private Engine engine; // Composition
+}
+
+
