@@ -62,6 +62,16 @@ public class Main {
     }
 }
 
+Objects and References:
+Object: An object is a concrete instance of a class. It has its own state (attributes) and behavior (methods).
+
+Reference: A reference is a variable that holds the memory address of an object. It does not hold the object itself but points to where the object is stored.
+
+
+Person person1 = new Person(); // person1 is a reference to a Person object
+
+
+
 
 How to Create an Array of Objects
 
@@ -76,6 +86,8 @@ public class Car {
         System.out.println(model + " is driving");
     }
 }
+
+
 Create an Array of Objects: You can create an array that holds multiple objects of this class.
 
 
