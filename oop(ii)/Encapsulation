@@ -1,0 +1,100 @@
+Encapsulation is one of the four fundamental Object-Oriented Programming (OOP) principles in Java, alongside Abstraction, Inheritance, and Polymorphism. It refers to the bundling of data (variables) and methods that operate on the data into a single unit or class. By controlling access to the data, encapsulation helps ensure the integrity and security of an object’s data.
+
+Key Components of Encapsulation
+Access Modifiers:
+
+Private: The private modifier restricts access to the members (variables and methods) of a class to within the same class. This is the most restrictive access level.
+Public: The public modifier allows members to be accessible from any other class.
+Protected: The protected modifier allows access to the members within the same package and also by subclasses in different packages.
+Default: If no access modifier is specified, it is considered "package-private" or "default," meaning the member is accessible only within its own package.
+Getters and Setters:
+
+Getters are methods that retrieve the value of a private variable.
+Setters are methods that set or update the value of a private variable.
+These methods provide a controlled way of accessing and modifying the variables while protecting the integrity of the data.
+  
+  Here’s an example:
+
+  public class Person {
+    private String name;
+    private int age;
+
+    // Getter for name
+    public String getName() {
+        return name;
+    }
+
+    // Setter for name
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Getter for age
+    public int getAge() {
+        return age;
+    }
+
+    // Setter for age
+    public void setAge(int age) {
+        if (age > 0) {  // Basic validation
+            this.age = age;
+        }
+    }
+}
+
+Detailed Explanation of How Encapsulation Works
+Bundling of Data and Methods:
+
+Encapsulation means bundling the data (attributes or fields) and the methods 
+  (functions or behaviors) that operate on that data into a single unit, typically a class.
+For example, if you have a Car class, the data might include attributes like speed
+  and fuel, and the methods might include actions like accelerate() and brake(). The Car class encapsulates both the attributes and the behaviors related to a car.
+
+  
+public class Car {
+    private int speed;
+    private double fuel;
+
+    public void accelerate() {
+        speed += 10;
+        fuel -= 0.5;
+    }
+
+    public void brake() {
+        speed -= 10;
+    }
+}
+Control Over Data:
+With encapsulation, you control how the data within a class is accessed and modified. You do this by making the 
+fields private and providing public methods (getters and setters) to access and update these fields.
+This control allows you to ensure that the data remains in a valid state. For example, you can validate inputs
+ before allowing changes to the data.
+
+public class BankAccount {
+    private double balance;
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        }
+    }
+
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+        }
+    }
+}
+Information Hiding:
+
+Encapsulation also enables information hiding, meaning that the internal implementation details of a class are 
+  hidden from other classes. Only the necessary information is exposed through a public interface.
+This separation of concerns makes the system easier to maintain and modify. For instance, you can change the
+  internal implementation of the BankAccount class (e.g., how balance is calculated) without affecting any other part of 
+  the code that uses this class.
+
+
