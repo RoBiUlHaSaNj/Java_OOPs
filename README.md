@@ -119,4 +119,64 @@ Creating and using classes
      Methods and overloading
   
 </a>
-    
+
+<h3>3.Encapsulation</h3>
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/oop(ii)/Encapsulation">Encapsulation</a>
+
+
+. Access modifiers: private, public, protected, default
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(i)/Access%20Modifiers">Access Modifiers</a>
+
+
+. Getters and Setters
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(iii)/Get%20set.java">Getters and Setters</a>
+
+
+
+<h3>4.Inheritance</h3>
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/oop(ii)/Inheritance(1)basic">Inheritance(1)basic</a>
+
+
+. Superclasses and subclasses
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(i)/superclasses%20and%20subclasses">superclasses and subclasses</a>
+
+
+. The extends keyword
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(iii)/extends%20keyword">extends keyword</a>
+
+
+. The super keyword
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(i)/Super">Super</a>
+
+. Method overriding
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(i)/Method%20Overloading">Method Overloading</a>
+
+
+. The final keyword  
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(iii)/final%20keyword">final keyword</a>
+
+
+. Interface
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/oop(ii)/Inheritance(3)Java%20Interface">Inheritance(3)Java Interface</a>
+
+. Diamond problem
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/oop(ii)/Inheritance(4)diamond%20problem">Inheritance(4)diamond problem</a>
+
+. Inheritance with Abstract
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/oop(ii)/Inheritance(2)%20Abstract">Inheritance(2) Abstract</a>
+
+
+
+
