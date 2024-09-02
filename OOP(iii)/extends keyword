@@ -1,0 +1,35 @@
+In Java, the extends keyword is used to create a subclass that inherits fields and methods from a superclass.
+It is a fundamental part of inheritance in Java, which allows for code reusability and the establishment of a hierarchical class structure.
+
+Key Concepts
+Superclass (Parent Class): The class from which another class inherits. It is also known as the base class.
+Subclass (Child Class): The class that inherits from another class. It can add new fields and methods or override existing ones.
+
+// Superclass
+class Animal {
+    // Method in the superclass
+    public void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+
+// Subclass
+class Dog extends Animal {
+    // Method in the subclass
+    public void bark() {
+        System.out.println("The dog barks.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create an object of the Dog class
+        Dog myDog = new Dog();
+        
+        // Call the method from the superclass
+        myDog.eat();  // Output: This animal eats food.
+        
+        // Call the method from the subclass
+        myDog.bark(); // Output: The dog barks.
+    }
+}
