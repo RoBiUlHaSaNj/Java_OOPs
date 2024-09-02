@@ -1,0 +1,88 @@
+In Java, superclasses and subclasses are central concepts in object-oriented programming that 
+facilitate inheritance and code reuse.
+
+Superclass (Parent Class)
+A superclass, also known as a parent class or base class, is a class that is extended by 
+another class. It contains common attributes and methods that are shared among its subclasses.
+
+Characteristics:
+
+Attributes and Methods: A superclass can have fields (attributes) and methods that are inherited 
+by its subclasses.
+
+Access Modifiers: Methods and fields in the superclass can be public, protected, or private. 
+Only public and protected members are accessible to subclasses; private members are not directly accessible.
+
+Constructors: Superclass constructors are not inherited but can be called from the subclass using the super keyword.
+
+Subclass (Child Class)
+A subclass, also known as a child class or derived class, extends a superclass and inherits its
+fields and methods. It can also have additional attributes and methods or override methods from the superclass.
+
+Characteristics:
+
+Inheritance: A subclass inherits all non-private fields and methods from its superclass.
+
+Method Overriding: A subclass can override methods from the superclass to provide a specific implementation.
+
+Access to Superclass Members: A subclass can access public and protected members of the superclass.
+It cannot access private members directly but can use public or protected methods of the superclass to interact with those members.
+
+super Keyword: The super keyword is used to refer to superclass members (fields and methods) and to invoke the superclass constructor.
+
+// Superclass
+class Animal {
+    // Fields
+    private String name;
+    protected int age;
+
+    // Constructor
+    public Animal(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Method
+    public void eat() {
+        System.out.println(name + " is eating.");
+    }
+
+    // Getter for name (private field)
+    public String getName() {
+        return name;
+    }
+}
+
+// Subclass
+class Dog extends Animal {
+    // Additional field
+    private String breed;
+
+    // Constructor
+    public Dog(String name, int age, String breed) {
+        super(name, age); // Call superclass constructor
+        this.breed = breed;
+    }
+
+    // Method specific to Dog
+    public void bark() {
+        System.out.println(getName() + " is barking.");
+    }
+
+    // Overriding the eat method
+    @Override
+    public void eat() {
+        System.out.println(getName() + " the dog is eating.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create an instance of Dog
+        Dog myDog = new Dog("Rover", 5, "Labrador");
+
+        // Call the methods
+        myDog.eat();   // Output: Rover the dog is eating.
+        myDog.bark();  // Output: Rover is barking.
+    }
+}
