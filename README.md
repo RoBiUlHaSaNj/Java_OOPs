@@ -178,5 +178,12 @@ Creating and using classes
 <a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/oop(ii)/Inheritance(2)%20Abstract">Inheritance(2) Abstract</a>
 
 
+<h3>5.Polymorphism</h3>
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/oop(ii)/Polymorphism">Polymorphism</a>
+
+ . The instanceof keyword
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(iii)/instanceof">instanceof</a>
 
 
