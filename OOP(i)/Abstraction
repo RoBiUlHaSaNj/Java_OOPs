@@ -1,0 +1,67 @@
+Abstraction is one of the four core principles of object-oriented programming (OOP). It involves
+hiding the complex implementation details and showing only the essential features of an object.
+In Java, abstraction can be achieved using abstract classes and interfaces.
+
+Abstract Classes and Methods
+An abstract class is a class that cannot be instantiated on its own and is meant to be subclassed.
+It can contain abstract methods (methods without implementation) as well as concrete methods
+(methods with implementation). Abstract classes are used when you want to provide a common base 
+for subclasses, but also want to enforce certain methods to be implemented by those subclasses.
+
+Abstract Class Example
+
+abstract class Vehicle {
+    private String name;
+
+    // Constructor
+    public Vehicle(String name) {
+        this.name = name;
+    }
+
+    // Concrete method
+    public String getName() {
+        return name;
+    }
+
+    // Abstract method (no implementation)
+    public abstract void move();
+}
+
+class Car extends Vehicle {
+    public Car(String name) {
+        super(name);
+    }
+
+    // Implementing the abstract method
+    @Override
+    public void move() {
+        System.out.println(getName() + " moves on four wheels.");
+    }
+}
+
+class Boat extends Vehicle {
+    public Boat(String name) {
+        super(name);
+    }
+
+    // Implementing the abstract method
+    @Override
+    public void move() {
+        System.out.println(getName() + " moves on water.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Vehicle car = new Car("Car");
+        Vehicle boat = new Boat("Boat");
+
+        car.move(); // Output: Car moves on four wheels.
+        boat.move(); // Output: Boat moves on water.
+    }
+}
+Key Points:
+
+Abstract classes cannot be instantiated directly.
+An abstract class can have both abstract and concrete methods.
+Abstract methods must be implemented by subclasses.
