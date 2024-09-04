@@ -5,6 +5,7 @@ abstract class Payment {
     public Payment(double amount) {
         this.amount = amount;
     }
+    
 
     // Common method to validate payment details
     public void validatePaymentDetails() {
