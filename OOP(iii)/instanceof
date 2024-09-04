@@ -1,0 +1,14 @@
+The instanceof Keyword
+The instanceof keyword is used to check whether an object is an instance of a specific class or subclass.
+It returns true if the object is an instance of the specified type (or its subclass); otherwise, it returns false.
+
+Animal animal = new Dog();
+
+if (animal instanceof Dog) {
+    System.out.println("The object is an instance of the Dog class.");
+} else {
+    System.out.println("The object is not an instance of the Dog class.");
+}
+
+// Output: The object is an instance of the Dog class.
+The instanceof keyword is often used before downcasting to ensure that the cast is safe.
