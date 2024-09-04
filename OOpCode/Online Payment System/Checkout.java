@@ -19,6 +19,7 @@ public class Checkout {
         bankTransferPayment.processPayment();
     }
 }
+
 /*Explanation:
 
 The Checkout class demonstrates how different payment methods can be processed using both the abstract class and interface implementations.
