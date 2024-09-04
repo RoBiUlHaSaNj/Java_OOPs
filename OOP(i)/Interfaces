@@ -1,0 +1,78 @@
+Interfaces
+An interface in Java is a reference type, similar to a class, that can contain only constants, method signatures,
+default methods, static methods, and nested types. Interfaces cannot contain instance fields or constructors. They are used to define a contract that other classes must follow.
+
+Interface Example
+
+interface Drivable {
+    // Abstract method (implicitly public and abstract)
+    void drive();
+
+    // Default method (with implementation)
+    default void start() {
+        System.out.println("Starting the vehicle...");
+    }
+}
+
+class Car implements Drivable {
+    @Override
+    public void drive() {
+        System.out.println("Driving the car.");
+    }
+}
+
+class Bike implements Drivable {
+    @Override
+    public void drive() {
+        System.out.println("Riding the bike.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Drivable car = new Car();
+        Drivable bike = new Bike();
+
+        car.start(); // Output: Starting the vehicle...
+        car.drive(); // Output: Driving the car.
+
+        bike.start(); // Output: Starting the vehicle...
+        bike.drive(); // Output: Riding the bike.
+    }
+}
+Key Points:
+
+Interfaces can contain abstract methods (implicitly public and abstract), default methods (with implementation), and static methods.
+A class implements an interface using the implements keyword and must provide implementations for all abstract methods.
+A class can implement multiple interfaces.
+Implementing Interfaces
+When a class implements an interface, it must provide concrete implementations for all of the abstract methods declared in the interface.
+
+
+interface Flyable {
+    void fly();
+}
+
+class Airplane implements Flyable {
+    @Override
+    public void fly() {
+        System.out.println("Airplane is flying.");
+    }
+}
+
+class Helicopter implements Flyable {
+    @Override
+    public void fly() {
+        System.out.println("Helicopter is flying.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Flyable airplane = new Airplane();
+        Flyable helicopter = new Helicopter();
+
+        airplane.fly(); // Output: Airplane is flying.
+        helicopter.fly(); // Output: Helicopter is flying.
+    }
+}
