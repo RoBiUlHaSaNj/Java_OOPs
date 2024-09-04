@@ -1,0 +1,39 @@
+Difference Between Abstract Classes and Interfaces
+Purpose:
+
+Abstract Classes: Used when you want to share code among closely related classes.
+They allow you to define some methods and leave others to be implemented by subclasses.
+Interfaces: Used to define a contract that any class can implement, regardless of where it 
+sits in the class hierarchy. They are more flexible because a class can implement multiple interfaces.
+
+
+Implementation:
+
+Abstract Classes: Can have a mix of abstract methods (without implementation) and concrete methods
+(with implementation). Can also have fields (variables) and constructors.
+Interfaces: Cannot have fields (except for static final constants) or constructors. Methods in an 
+interface are implicitly abstract (unless they are default or static).
+
+
+Inheritance:
+
+Abstract Classes: A class can extend only one abstract class (or any class) because Java does not support
+multiple inheritance.
+Interfaces: A class can implement multiple interfaces, which is Java's way of achieving multiple
+inheritance.
+
+
+Access Modifiers:
+
+Abstract Classes: Methods can have any access modifier (public, protected, private).
+Interfaces: Methods are implicitly public and abstract unless specified as default or static.
+Fields:
+
+Abstract Classes: Can have instance variables.
+Interfaces: Can only have static final variables (constants).
+Use Cases:
+
+Abstract Classes: Use when classes share a significant amount of code and have a common base, 
+but still need to define some abstract behavior.
+Interfaces: Use when you want to define capabilities that can be added to classes from different hierarchies, or 
+when you need to ensure that different classes implement certain methods.
