@@ -1,3 +1,4 @@
+
 // Interface for payment actions
 interface PaymentActions {
     void initiatePayment();
