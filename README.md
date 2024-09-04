@@ -186,4 +186,19 @@ Creating and using classes
 
 <a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(iii)/instanceof">instanceof</a>
 
+<h3>6.Abstraction</h3>
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(i)/Abstraction">Abstraction</a>
+
+. Interfaces
+
+. Implementing interfaces
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(i)/Interfaces">Interfaces</a>
+
+
+. Difference between abstract classes and interfaces
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(i)/Abstract%20Classes%20and%20Interfaces">Abstract Classes and Interfaces</a>
+
 
