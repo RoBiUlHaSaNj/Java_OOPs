@@ -201,4 +201,9 @@ Creating and using classes
 
 <a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(i)/Abstract%20Classes%20and%20Interfaces">Abstract Classes and Interfaces</a>
 
+<h1>Intermediate Level</h1>
+
+<h3>Inner class</h3>
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(iii)/Inner%20Classes">Inner Classes</a>
 
