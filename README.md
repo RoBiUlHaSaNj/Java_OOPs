@@ -207,3 +207,26 @@ Creating and using classes
 
 <a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(iii)/Inner%20Classes">Inner Classes</a>
 
+<h3>Object Class and Wrapper Classes</h3>
+
+Methods of the Object class (toString(), equals(), hashCode(), etc.)
+
+Auto-boxing and unboxing
+
+Wrapper classes for primitive types
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(i)/Object%20Class%20and%20Wrapper%20Classes%20in%20Java">Object Class and Wrapper Classes in Java</a>
+
+<h3>Exception Handling</h3>
+
+try, catch, finally
+
+Throwing exceptions
+
+Custom exceptions
+
+Checked vs. unchecked exceptions
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(iii)/Exception%20Handling">Exception Handling</a>
+
+
