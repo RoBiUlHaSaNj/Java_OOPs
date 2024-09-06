@@ -73,11 +73,94 @@ public class Main {
 hashCode():
 
 Returns an integer hash code value for the object.
-If you override equals(), you must also override hashCode() to ensure that objects that are considered equal have the same hash code.
-Example:
+If you override equals(), you must also override hashCode() to ensure that objects that are considered
+equal have the same hash code.
+
 
 
 
 public int hashCode() {
     return Objects.hash(name, age);
 }
+
+
+
+
+2. Auto-Boxing and Unboxing
+In Java, primitive types (like int, char, double, etc.) are not objects. However, sometimes you 
+need to treat these primitive values as objects, such as when storing them in a collection like ArrayList. Java provides Wrapper Classes for this purpose.
+
+Wrapper Classes for Primitive Types:
+Each primitive type has a corresponding wrapper class:
+
+int → Integer
+char → Character
+double → Double
+boolean → Boolean
+byte → Byte
+short → Short
+long → Long
+float → Float
+Auto-boxing:
+Auto-boxing is the automatic conversion of primitive types to their corresponding wrapper classes.
+
+e
+public class Main {
+    public static void main(String[] args) {
+        int num = 5;
+        Integer obj = num;  // Auto-boxing: int to Integer
+        System.out.println(obj);
+    }
+}
+
+
+Unboxing:
+Unboxing is the automatic conversion of wrapper class objects back to their corresponding primitive types.
+
+
+public class Main {
+    public static void main(String[] args) {
+        Integer obj = 10;
+        int num = obj;  // Unboxing: Integer to int
+        System.out.println(num);
+    }
+}
+
+
+3. Why Use Wrapper Classes?
+Wrapper classes are useful when:
+
+You need to use a primitive value in a context that requires objects (e.g., in collections like ArrayList, which cannot hold primitive types).
+You need utility methods for converting between strings and primitive types (e.g., Integer.parseInt()).
+
+Examples of Wrapper Class Usage:
+
+Parsing Strings to Primitive Types:
+
+Wrapper classes provide methods for converting strings to primitives.
+
+String str = "123";
+int num = Integer.parseInt(str);  // Converts String to int
+Using Wrappers in Collections:
+
+Collections like ArrayList cannot store primitive types, so you use their wrapper classes.
+
+
+ArrayList<Integer> list = new ArrayList<>();
+list.add(10);  // Auto-boxing occurs
+int num = list.get(0);  // Unboxing occurs
+
+
+
+
+The Object class provides essential methods (toString(), equals(), hashCode(), etc.) that are fundamental for working with objects.
+Auto-boxing and unboxing allow seamless conversion between primitives and wrapper classes.
+Wrapper classes are necessary when primitive types need to be treated as objects, especially in collections or when utilizing certain methods.
+
+
+
+
+
+
+
+
