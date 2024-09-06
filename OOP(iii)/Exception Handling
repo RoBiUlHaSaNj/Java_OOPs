@@ -1,0 +1,179 @@
+1.Exception handling is a mechanism in Java that allows you to manage runtime errors,
+ensuring that the normal flow of the program is not disrupted. Exceptions are events
+that occur during the execution of a program and disrupt the normal flow of instructions.
+
+Key Components of Exception Handling:
+
+try Block: Contains code that might throw an exception.
+catch Block: Contains code to handle the exception.
+finally Block: Contains code that will always execute, regardless of whether an exception occurs or not.
+throw Statement: Used to explicitly throw an exception.
+Custom Exceptions: User-defined exceptions to handle specific cases.
+
+2. try, catch, and finally
+The try block contains the code that might throw an exception.
+The catch block handles specific exceptions that occur within the try block.
+The finally block executes whether an exception occurs or not. It’s usually used for cleaning up resources (like closing files or database connections).
+
+public class ExceptionHandlingExample {
+    public static void main(String[] args) {
+        try {
+            int result = divide(10, 0);  // This will throw an ArithmeticException
+        } catch (ArithmeticException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        } finally {
+            System.out.println("This block is always executed.");
+        }
+    }
+
+    public static int divide(int a, int b) {
+        return a / b;  // This will cause an ArithmeticException (division by zero)
+    }
+}
+Output:
+Exception caught: / by zero
+
+
+This block is always executed.
+Explanation:
+The try block calls the divide() method, which throws an ArithmeticException (division by zero).
+The catch block handles the exception and prints an error message.
+The finally block runs regardless of whether an exception is caught.
+
+
+3. Throwing Exceptions
+You can throw exceptions manually using the throw statement. This is useful when you want to explicitly signal that an error condition has occurred.
+
+
+
+public class ThrowExample {
+    public static void main(String[] args) {
+        try {
+            validateAge(15);  // This will throw an IllegalArgumentException
+        } catch (IllegalArgumentException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+    }
+
+    public static void validateAge(int age) {
+        if (age < 18) {
+            throw new IllegalArgumentException("Age must be 18 or older.");
+        }
+        System.out.println("Age is valid.");
+    }
+}
+
+
+Exception caught: Age must be 18 or older.
+Explanation:
+The validateAge() method checks if the age is less than 18.
+If the age is invalid, it throws an IllegalArgumentException using the throw keyword.
+The catch block catches the exception and prints the error message.
+
+
+4. Custom Exceptions
+Sometimes, the built-in exceptions are not sufficient to describe certain error conditions. 
+In such cases, you can create your own exceptions by extending the Exception or RuntimeException class.
+
+Example of a Custom Exception:
+
+// Define a custom exception
+class InvalidAgeException extends Exception {
+    public InvalidAgeException(String message) {
+        super(message);
+    }
+}
+
+public class CustomExceptionExample {
+    public static void main(String[] args) {
+        try {
+            validateAge(15);  // This will throw an InvalidAgeException
+        } catch (InvalidAgeException e) {
+            System.out.println("Custom Exception caught: " + e.getMessage());
+        }
+    }
+
+    public static void validateAge(int age) throws InvalidAgeException {
+        if (age < 18) {
+            throw new InvalidAgeException("Age must be 18 or older.");
+        }
+        System.out.println("Age is valid.");
+    }
+}
+Output:
+
+Custom Exception caught: Age must be 18 or older.
+
+Explanation:
+A custom exception InvalidAgeException is created by extending the Exception class.
+The validateAge() method throws this custom exception when the age is invalid.
+The catch block handles the custom exception.
+
+
+5. Checked vs. Unchecked Exceptions
+In Java, exceptions are categorized into checked and unchecked exceptions.
+
+Checked Exceptions:
+These exceptions are checked at compile time.
+If a method can throw a checked exception, the method must either handle it using a try-catch block or declare it using the throws keyword.
+Examples: IOException, SQLException, ClassNotFoundException.
+
+Unchecked Exceptions:
+
+These exceptions are not checked at compile time and occur at runtime.
+They are subclasses of RuntimeException.
+You are not required to handle or declare them.
+Examples: NullPointerException, ArithmeticException, ArrayIndexOutOfBoundsException.
+Example of Checked Exception:
+
+import java.io.*;
+
+public class CheckedExceptionExample {
+    public static void main(String[] args) {
+        try {
+            readFile("nonexistentfile.txt");  // Checked exception: FileNotFoundException
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found: " + e.getMessage());
+        }
+    }
+
+    // This method declares that it can throw a checked exception (FileNotFoundException)
+    public static void readFile(String fileName) throws FileNotFoundException {
+        File file = new File(fileName);
+        FileReader fr = new FileReader(file);  // Throws FileNotFoundException if file doesn't exist
+    }
+}
+Explanation:
+
+The FileReader constructor throws a FileNotFoundException if the file does not exist.
+Since FileNotFoundException is a checked exception, it must be either caught or declared in the method signature (throws FileNotFoundException).
+Example of Unchecked Exception:
+
+public class UncheckedExceptionExample {
+    public static void main(String[] args) {
+        try {
+            int[] arr = {1, 2, 3};
+            System.out.println(arr[5]);  // This will throw ArrayIndexOutOfBoundsException
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+    }
+}
+Explanation:
+
+The ArrayIndexOutOfBoundsException is an unchecked exception, which occurs at runtime when trying to access an invalid index in an array.
+There is no requirement to declare or catch unchecked exceptions, but it's good practice to handle them.
+
+
+Summary:
+try, catch, finally:
+Use try to wrap code that might throw exceptions.
+Handle exceptions with catch.
+Use finally to execute code regardless of whether an exception occurs.
+Throwing exceptions:
+You can throw exceptions manually using the throw statement.
+Custom exceptions:
+You can create your own exceptions by extending the Exception or RuntimeException classes.
+Checked vs. Unchecked exceptions:
+Checked exceptions are checked at compile time and must be either caught or declared.
+Unchecked exceptions occur at runtime and are not required to be caught or declared.
