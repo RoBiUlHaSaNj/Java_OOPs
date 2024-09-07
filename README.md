@@ -247,3 +247,20 @@ Generics in collections
 <a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(iii)/Hash%20set%20.java">Hash set.java</a>
 
 
+<h3>5.File I/O and Serialization and package</h3>
+
+File handling using java.io package
+
+Serialization and deserialization
+
+The Serializable interface
+
+Transient keyword
+
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(iii)/File">File</a>
+
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(iii)/java%20package">java package</a>
+
+
