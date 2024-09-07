@@ -2,33 +2,45 @@
 The School Management System is an all-encompassing platform designed to streamline and 
 enhance educational processes within an institution. This system serves three main users: Students, 
 Instructors, and the System itself, which oversees Courses, Quizzes, and Lessons.
+
 For Students:
-•	The system offers an intuitive interface where students can easily enroll in their
+
+The system offers an intuitive interface where students can easily enroll in their
 chosen courses, view details of their enrolled courses, and participate in quizzes 
 to assess their understanding of the material.
+
 For Instructors:
-•	Instructors can create and manage courses, add students to these courses, and monitor 
+
+	Instructors can create and manage courses, add students to these courses, and monitor 
 course enrollments. They can also create and manage quizzes tailored to course content, 
 track student participation by marking attendance, and ensure active engagement.
+
 For the System:
-•	The System manages the overall coordination of courses, quizzes, lessons, and attendance,
+
+	The System manages the overall coordination of courses, quizzes, lessons, and attendance,
 providing a unified platform for efficient academic activity management.
 Overall:
+
 1.	User Management:
 o	Handle distinct roles and functionalities for students and instructors.
 o	Manage authentication and profile details for each user type.
+
 2.	Course Management:
 o	Enable instructors to create and manage courses.
 o	Allow students to enroll in courses and access course-related information.
+
 3.	Quiz and Lesson Management:
 o	Support the creation, distribution, and administration of quizzes.
 o	Provide tools for adding and viewing lessons along with associated materials.
+
 4.	Attendance Tracking:
 o	Allow instructors to mark and manage student attendance.
 o	Generate reports for individual students or entire courses.
+
 5.	Educational Interaction:
 o	Provide students with access to quizzes, lessons, and personal information management.
 o	Enable instructors to create quizzes, manage courses, and track student progress.
+
 The School Management System aims to improve the educational experience by offering a structured 
 and efficient way to manage academic activities. By integrating course management, quizzes, lessons,
 and attendance tracking, the system supports both students and instructors, promoting active learning and streamlined administrative tasks.
