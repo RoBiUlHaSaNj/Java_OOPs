@@ -1,0 +1,137 @@
+File I/O (Input/Output) and Serialization are essential concepts in Java for 
+handling data storage and transfer. Here’s an overview of how they work, along with some examples.
+
+1. File Handling using java.io Package
+The java.io package provides classes and methods for file input
+and output operations. Key classes include File, FileReader, FileWriter, BufferedReader, and BufferedWriter.
+
+Example: Reading from and Writing to a File
+Writing to a File:
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class FileWriteExample {
+    public static void main(String[] args) {
+        String filePath = "example.txt";
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+            writer.write("Hello, World!");
+            writer.newLine();
+            writer.write("Welcome to File I/O in Java.");
+            System.out.println("Data written to file successfully.");
+        } catch (IOException e) {
+            System.out.println("An error occurred while writing to the file.");
+            e.printStackTrace();
+        }
+    }
+}
+Reading from a File:
+
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class FileReadExample {
+    public static void main(String[] args) {
+        String filePath = "example.txt";
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while reading from the file.");
+            e.printStackTrace();
+        }
+    }
+}
+
+Explanation:
+
+BufferedWriter and FileWriter are used to write data to a file.
+BufferedReader and FileReader are used to read data from a file.
+The try-with-resources statement ensures that the resources are closed automatically.
+2. Serialization and Deserialization
+Serialization is the process of converting an object into a byte stream to be saved to
+a file or transmitted over a network. Deserialization is the reverse process: converting the byte stream back into an object.
+
+Serializable Interface
+To serialize an object, the class must implement the Serializable interface.
+
+Example: Serializing and Deserializing an Object
+Class to be Serialized:
+
+import java.io.Serializable;
+
+public class Person implements Serializable {
+    private static final long serialVersionUID = 1L; // For version control
+    private String name;
+    private transient int age; // transient fields are not serialized
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String toString() {
+        return "Person [Name=" + name + ", Age=" + age + "]";
+    }
+}
+
+Serializing an Object:
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+public class SerializeExample {
+    public static void main(String[] args) {
+        Person person = new Person("John Doe", 30);
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("person.ser"))) {
+            out.writeObject(person);
+            System.out.println("Object serialized successfully.");
+        } catch (IOException e) {
+            System.out.println("An error occurred during serialization.");
+            e.printStackTrace();
+        }
+    }
+}
+
+Deserializing an Object:
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+
+public class DeserializeExample {
+    public static void main(String[] args) {
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("person.ser"))) {
+            Person person = (Person) in.readObject();
+            System.out.println("Object deserialized successfully: " + person);
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("An error occurred during deserialization.");
+            e.printStackTrace();
+        }
+    }
+}
+
+Explanation:
+
+Serializable: The Person class implements Serializable to allow its instances to be serialized.
+transient keyword: The age field is marked as transient, meaning it will not be serialized. When 
+deserialized, this field will have its default value (0 for int).
+serialVersionUID: This is a unique identifier for the serialized class version. It’s used to ensure
+compatibility between serialized and deserialized objects.
+3. Key Concepts
+Serializable Interface: Marker interface with no methods. Its presence signals that an object of the class can be serialized.
+transient Keyword: Used to indicate that a field should not be serialized. Useful for fields that are temporary or sensitive (e.g., passwords).
+serialVersionUID: A unique identifier for each Serializable class, used during deserialization to verify that the sender
+and receiver of a serialized object have compatible versions of the class.
+Summary:
+File I/O in Java involves reading from and writing to files using classes from the java.io package.
+Serialization allows objects to be converted into a byte stream and saved to a file or sent over a network.
+Deserialization converts the byte stream back into an object.
+Serializable interface is required for an object to be serialized.
+transient keyword is used to exclude fields from serialization.
