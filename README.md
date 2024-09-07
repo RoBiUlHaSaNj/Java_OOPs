@@ -242,4 +242,8 @@ Generics in collections
 <a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(i)/Collections%20Framework">Collections Framework</a>
 
 
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(iii)/Hash%20map%20.java">Hash map.java</a>
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(iii)/Hash%20set%20.java">Hash set.java</a>
+
 
