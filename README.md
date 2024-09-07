@@ -239,9 +239,7 @@ Iterators and enhanced for-loop
 
 Generics in collections
 
-
-<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/tree/main/OOP(i)">OOP(i)</a>
-
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(i)/Collections%20Framework">Collections Framework</a>
 
 
 
