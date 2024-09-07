@@ -203,11 +203,11 @@ Creating and using classes
 
 <h1>Intermediate Level</h1>
 
-<h3>Inner class</h3>
+<h3>1.Inner class</h3>
 
 <a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(iii)/Inner%20Classes">Inner Classes</a>
 
-<h3>Object Class and Wrapper Classes</h3>
+<h3>2.Object Class and Wrapper Classes</h3>
 
 Methods of the Object class (toString(), equals(), hashCode(), etc.)
 
@@ -217,7 +217,7 @@ Wrapper classes for primitive types
 
 <a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(i)/Object%20Class%20and%20Wrapper%20Classes%20in%20Java">Object Class and Wrapper Classes in Java</a>
 
-<h3>Exception Handling</h3>
+<h3>3.Exception Handling</h3>
 
 try, catch, finally
 
@@ -228,5 +228,20 @@ Custom exceptions
 Checked vs. unchecked exceptions
 
 <a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(iii)/Exception%20Handling">Exception Handling</a>
+
+<h3>4.Collections Framework</h3>
+
+List, Set, Map, Queue interfaces
+
+ArrayList, LinkedList, HashSet, TreeSet, HashMap, TreeMap, etc.
+
+Iterators and enhanced for-loop
+
+Generics in collections
+
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/tree/main/OOP(i)">OOP(i)</a>
+
+
 
 
