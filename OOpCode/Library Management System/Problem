@@ -1,0 +1,9 @@
+Problem: Library Management System
+Scenario: You’re building a library management system for a local library. The system needs to handle books, patrons (library members), and manage book checkouts and returns.
+
+Requirements:
+Store Books: Each book has a title, author, and unique ISBN.
+Manage Patrons: Each patron has a name and a unique ID.
+Check Out Books: Patrons can check out books. Ensure that each book can only be checked out by one patron at a time.
+Return Books: Patrons can return books. The system should update the availability of the book.
+Search Books: The system should allow searching for books by title, author, or ISBN.
