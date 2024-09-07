@@ -7,3 +7,17 @@ Manage Patrons: Each patron has a name and a unique ID.
 Check Out Books: Patrons can check out books. Ensure that each book can only be checked out by one patron at a time.
 Return Books: Patrons can return books. The system should update the availability of the book.
 Search Books: The system should allow searching for books by title, author, or ISBN.
+
+
+Output:
+
+Book checked out successfully.
+Book checked out successfully.
+Book is already checked out.
+Book returned successfully.
+
+Books by F. Scott Fitzgerald:
+Book [title=The Great Gatsby, author=F. Scott Fitzgerald, isbn=9780743273565]
+
+Books with title 'To Kill a Mockingbird':
+Book [title=To Kill a Mockingbird, author=Harper Lee, isbn=9780061120084]
