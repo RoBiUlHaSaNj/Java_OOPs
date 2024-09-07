@@ -264,3 +264,101 @@ Transient keyword
 <a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/blob/main/OOP(iii)/java%20package">java package</a>
 
 
+
+***problem slove topic wise***
+
+<a href="https://github.com/RoBiUlHaSaNj/Java_OOPs/tree/main/OOpCode">OOpCode</a>
+
+
+Library Management System
+
+Online Payment System
+
+
+Ride-Sharing Application
+
+
+Array list.java
+
+
+Array_of_Objects.java
+
+
+Array_of_object_dynamic.java
+
+
+Arrayofobject.java
+
+
+Class.java
+
+
+Constructor.java
+
+Diamond.java
+
+
+Encapsulation problem .java
+
+
+Encapsulation.java
+
+
+Exception Handling.java
+
+
+Hash set .java
+
+
+Hasp map.java
+
+
+Hierarchical_Inheritance.java
+
+
+Hybrid_Inheritance.java
+
+
+Key Concepts of Encapsulation.java
+
+
+Method Overloading (Compile-time Polymorphism).java
+
+
+Method Overriding (Runtime Polymorphism).java
+
+
+Method.java
+
+
+
+Multilevel_Inheritance.java
+
+Multiple_Inheritance.java
+
+
+Nested Inner class .java
+
+
+Nested Static Class.java
+
+
+Object.java
+
+
+
+PolyArray.java
+
+Poly_arrayInterface.java
+
+
+Single_Inheritance.java
+
+
+Wrapper Classes atuo boxing.java
+
+
+final.java
+
+
+polymorphism.java
